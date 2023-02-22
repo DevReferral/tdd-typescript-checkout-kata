@@ -22,8 +22,7 @@ describe('total for items without discount', () => {
     describe('total for items without discount', () => {
 
         it('expect checkout(items:string) to exist',()=> {
-            
-            
+               
             expect(store.checkout).toBeInstanceOf(Function)
         })
         it('should return 0 when no items are available', () => {

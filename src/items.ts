@@ -9,10 +9,6 @@ export interface Item{
 
    getPrice():number
 
-   getDiscount?():{
-    count:number,
-    value:number,
-   }
 }
 
 export const ItemFactory = (item:ItemType):Item=>{
