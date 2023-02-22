@@ -1,7 +1,6 @@
 import { Store } from "../src/Store";
-import { checkout } from "../src/calculate";
-import { discount } from '../src/discount';
-import { DiscountClass } from "../src/discountClass";
+
+import { Discount } from "../src/Discount";
 import { ItemType } from "../src/types";
 /**
  * A : 50  (discount)=> 3 for 130
@@ -15,8 +14,8 @@ describe('total for items without discount', () => {
     
     beforeEach(() => {
 
-        const A_DISCOUNT = new DiscountClass(ItemType.A,3,20)
-        const B_DISCOUNT = new DiscountClass(ItemType.B,2,15)
+        const A_DISCOUNT = new Discount(ItemType.A,3,20)
+        const B_DISCOUNT = new Discount(ItemType.B,2,15)
         
        store = new Store([A_DISCOUNT, B_DISCOUNT])
     })

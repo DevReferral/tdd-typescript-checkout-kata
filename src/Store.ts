@@ -1,10 +1,10 @@
-import { DiscountClass } from "./discountClass";
+import { Discount } from "./Discount";
 import { ItemFactory } from "./items";
 import { ItemType } from "./types";
 
 export class Store {
 
-    constructor(private discounts?:Array<DiscountClass>){}
+    constructor(private discounts?:Array<Discount>){}
 
     checkout=(items:string):number=>{ //O(n)
      

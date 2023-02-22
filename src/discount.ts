@@ -1,20 +1,23 @@
+import { ItemType } from "./types";
 
-import { ItemFactory } from "./items"
-import { Entry, ItemType, Key } from "./types"
-
-export const discount =(item:string,items:string[]):number=>{
-    let _discount=0
-
-    const count = items.filter(currentItem =>currentItem===item).length
-
-    const Item = ItemFactory(item as ItemType);
-
-     if ( typeof Item.getDiscount === 'function'){
-
-        const {count:discountCount,value:discountValue} =Item.getDiscount();
-            
-        _discount =Math.trunc(count/discountCount)*discountValue
-     }
+export class Discount{
     
-   return _discount
+  constructor(
+    private type:ItemType,
+    private discountCount:number,
+    private discountValue:number
+  ){}
+     
+
+  total(items:Array<ItemType>):number{
+     let discount=0;
+
+        const count = items.filter(currentItem =>currentItem===this.type).length;
+
+        discount =Math.trunc(count/this.discountCount)*this.discountValue;
+     
+        return discount;
+     
+  }
+
 }
